@@ -1,0 +1,11 @@
+name: DevSecOps Security Pipeline
+
+on:
+  push:
+    branches: [ "*" ]
+
+jobs:
+  sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "GitHub Actions is now working"
