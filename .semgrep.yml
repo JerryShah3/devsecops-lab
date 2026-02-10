@@ -1,0 +1,14 @@
+rules:
+  - id: python-command-injection
+    patterns:
+      - pattern: os.system($CMD)
+      - pattern: os.popen($CMD)
+    message: "Possible command injection"
+    severity: ERROR
+    languages: [python]
+
+  - id: hardcoded-secret
+    pattern: password = "$X"
+    message: "Hardcoded secret detected"
+    severity: ERROR
+    languages: [python]

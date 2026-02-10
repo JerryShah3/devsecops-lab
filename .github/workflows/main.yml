@@ -2,10 +2,18 @@ name: DevSecOps Security Pipeline
 
 on:
   push:
-    branches: [ "*" ]
+    branches: [ "main" ]
+  pull_request:
 
 jobs:
-  sanity:
+  sast:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "GitHub Actions is now working"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep (SAST)
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: .semgrep.yml
+
