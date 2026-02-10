@@ -25,4 +25,4 @@ jobs:
         with:
           image-ref: vuln-app
           severity: HIGH,CRITICAL
-          exit-code: 0
+          exit-code: 1
