@@ -26,3 +26,6 @@ jobs:
           image-ref: vuln-app
           severity: HIGH,CRITICAL
           exit-code: 1
+
+      - name: Show environment
+        run: uname -a
